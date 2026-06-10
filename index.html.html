@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Tosin ❤️</title>
+<style>
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:linear-gradient(135deg,#0f52ba,#6a5acd);
+height:100vh;
+overflow:hidden;
+display:flex;
+justify-content:center;
+align-items:center;
+color:white;
+}
+.card{
+text-align:center;
+max-width:700px;
+padding:30px;
+}
+button{
+padding:12px 25px;
+margin:10px;
+border:none;
+border-radius:30px;
+cursor:pointer;
+font-size:18px;
+}
+.yes{background:#fff;color:#0f52ba;}
+.no{background:#ff6b6b;color:white;position:relative;}
+.hidden{display:none;}
+.heart{
+position:absolute;
+font-size:20px;
+animation:float 8s linear infinite;
+opacity:.7;
+}
+@keyframes float{
+from{transform:translateY(100vh);}
+to{transform:translateY(-120vh);}
+}
+</style>
+</head>
+<body>
+
+<div id="page1" class="card">
+<h1>Hey Tosin 👋</h1>
+<p>I've been meaning to ask you this very weird and slightly cringe question 😭</p>
+<p>Do you wish to continue?</p>
+<button class="yes" onclick="showPage(2)">YES ✨</button>
+<button class="no" id="runBtn">NO 😒</button>
+</div>
+
+<div id="page2" class="card hidden">
+<h1>Okay...</h1>
+<p>No backing out now 😭</p>
+<h2>Would you be my girlfriend? ❤️</h2>
+<button class="yes" onclick="showPage(4)">YES ❤️</button>
+<button class="no" onclick="showPage(3)">NO 😭</button>
+</div>
+
+<div id="page3" class="card hidden">
+<h1>Okay 😭</h1>
+<p>Not bad.</p>
+<p>No problem.</p>
+<p>At least I finally asked 😂</p>
+<p>Thanks for hearing me out ❤️</p>
+<button class="yes" onclick="showPage(1)">Return Home</button>
+</div>
+
+<div id="page4" class="card hidden">
+<h1>WAIT... YOU ACTUALLY SAID YES? 😭❤️</h1>
+<p>Uhm...</p>
+<p>So I guess we're dating now? 😂</p>
+<p>I'm kind of new to this.</p>
+<p>No manual. No tutorial. No YouTube guide.</p>
+<p>We're both about to figure this out together 😭❤️</p>
+<p>But I'm really happy you said yes.</p>
+<p>You just made my day.</p>
+<button class="yes" onclick="showPage(5)">Continue ✨</button>
+</div>
+
+<div id="page5" class="card hidden">
+<h1>Achievement Unlocked 🎉</h1>
+<p>Girlfriend Acquired ❤️</p>
+<p>+100 Happiness<br>+50 Smiles<br>+1000 Butterflies 🦋</p>
+
+<p>⚠️ Important Notice 😂</p>
+<p>You've successfully reached the end of this very weird and slightly cringe website 😭</p>
+<p>Honestly, I didn't know the best way to ask this question.</p>
+<p>So I made a this instead 😂</p>
+<p>Slight issue, this kini doesn't actually save your answer.</p>
+<p>So please tell me your answer in me DM 😭❤️</p>
+<p>Thank you for making it this far.</p>
+
+<h2>❤️ Mission Complete ❤️</h2>
+</div>
+
+<script>
+function showPage(n){
+document.querySelectorAll('.card').forEach(x=>x.classList.add('hidden'));
+document.getElementById('page'+n).classList.remove('hidden');
+}
+
+const btn=document.getElementById('runBtn');
+btn.addEventListener('mouseover',()=>{
+btn.style.position='fixed';
+btn.style.left=Math.random()*(window.innerWidth-120)+'px';
+btn.style.top=Math.random()*(window.innerHeight-60)+'px';
+});
+
+for(let i=0;i<20;i++){
+let h=document.createElement('div');
+h.className='heart';
+h.innerHTML='💙';
+h.style.left=Math.random()*100+'vw';
+h.style.animationDuration=(5+Math.random()*5)+'s';
+document.body.appendChild(h);
+}
+</script>
+</body>
+</html>
